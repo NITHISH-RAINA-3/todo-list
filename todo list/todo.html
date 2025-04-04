@@ -1,0 +1,38 @@
+<style>
+    input{
+        color: black;
+    
+    }
+    body{
+        align-items: center;
+        background-image:url(todo1.jpg) ;
+        
+    }
+    div{
+        padding-left: 400px;
+        padding-right: 100px;
+        padding-top: 200px;
+    }
+</style>
+<body>
+    <div id="div">
+<input id="input">
+<button onclick="add()">add</button>
+<ol id="list-container">
+</ol>
+<script>
+    var ol=document.getElementById("list-container")
+    var input=document.getElementById("input")
+    function add()
+    {
+       var listitem=document.createElement("li")
+       listitem.innerHTML=input.value+ "<button onclick='itemdelete(event)'>delete</button>"
+       ol.append(listitem)
+    }
+    function itemdelete(event)
+    {
+      event.target.parentElement.remove()
+    }
+</script>
+</div>
+</body>
